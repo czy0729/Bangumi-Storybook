@@ -338,7 +338,8 @@
         /* eslint-enable object-shorthand */
       })
     );
-  };</script><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="address=no"><meta name="theme-color" content="#000000"><link rel="shortcut icon" href="https://bgm.tv/img/favicon.ico" type="image/x-icon"><link rel="apple-touch-icon-precomposed" href="https://bgm.tv/img/ico/ico_ios.png"><style>* {
+  };</script><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="address=no"><meta name="theme-color" content="#000000"><link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon"><style>* {
+    box-sizing: border-box;
     outline: none !important;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   }
@@ -356,7 +357,14 @@
     padding: 0 !important;
     font-family: rhrm, PingFangSC, Open Sans, Helvetica Neue, Arial, Hiragino Sans GB,
       Microsoft YaHei, WenQuanYi Micro Hei, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
     background: rgb(24, 24, 24) !important;
+  }
+  #awardWrapper {
+    font-family: rhrm, PingFangSC, Open Sans, Helvetica Neue, Arial, Hiragino Sans GB,
+      Microsoft YaHei, WenQuanYi Micro Hei, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: none;
   }
   .sb-wrapper {
@@ -369,11 +377,9 @@
     height: 100vh;
     font-family: rhrm, PingFangSC, Open Sans, Helvetica Neue, Arial, Hiragino Sans GB,
       Microsoft YaHei, WenQuanYi Micro Hei, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
     background: rgb(24, 24, 24) !important;
     overflow: hidden;
-  }
-  .component-header--normal + .component-page {
-    max-height: calc(100vh - 56px) !important;
   }
   @font-face {
     font-family: 'bgm';
@@ -383,12 +389,21 @@
   }</style><script>const htmlElement = document.getElementsByTagName('html')[0]
   htmlElement.setAttribute('data-theme', 'dark')
 
-  document.title = 'Bangumi 番组计划'</script><script async defer="defer" data-website-id="60fdb386-2648-4b20-8166-6f3481ff3d49" src="https://umami.magma.ink/umami.js"></script><style>#root[hidden],
+  document.title = 'Bangumi 番组计划'
+
+  function scrollHorizontally(event) {
+    event.preventDefault() // 阻止默认滚动行为
+    const delta = Math.max(-1, Math.min(1, event.wheelDelta || -event.detail))
+    const container = event.target
+    container.scrollLeft -= delta * 30 // 触发横向滚动
+  }</script><script async src="https://umami.magma.ink/script.js" data-website-id="5ab772a6-b40d-44c4-ad6c-c241b425ed33" data-auto-track="false"></script><style>#root[hidden],
       #docs-root[hidden] {
         display: none !important;
       }</style></head><body><style>@font-face {
     font-family: 'rhrm';
-    src: url('https://cdn.jsdelivr.net/gh/czy0729/Bangumi@master/src/assets/fonts/ResourceHanRoundedCN-Medium.ttf')
+    /* src: url('https://cdn.jsdelivr.net/gh/czy0729/Bangumi@master/src/assets/fonts/ResourceHanRoundedCN-Medium.ttf')
+      format('truetype'); */
+    src: url('https://pixivel.moe/fonts/ResourceHanRoundedCN-Medium.0a7d9528.woff2')
       format('truetype');
     font-display: swap;
   }
@@ -396,10 +411,21 @@
     font-family: 'rhrb';
     /* src: url('https://cdn.jsdelivr.net/gh/czy0729/Bangumi@master/src/assets/fonts/ResourceHanRoundedCN-Bold.ttf')
     format('truetype'); */
-    src: url('https://cdn.jsdelivr.net/gh/czy0729/Bangumi@master/src/assets/fonts/ResourceHanRoundedCN-Medium.ttf')
+    src: url('https://pixivel.moe/fonts/ResourceHanRoundedCN-Medium.0a7d9528.woff2')
       format('truetype');
     font-display: swap;
-  }</style><div class="sb-preparing-story sb-wrapper"><div class="sb-loader"></div></div><div class="sb-preparing-docs sb-wrapper"><div class="sb-previewBlock"><div class="sb-previewBlock_header"><div class="sb-previewBlock_icon"></div><div class="sb-previewBlock_icon"></div><div class="sb-previewBlock_icon"></div><div class="sb-previewBlock_icon"></div></div><div class="sb-previewBlock_body"><div class="sb-loader"></div></div></div><table aria-hidden="true" class="sb-argstableBlock"><thead class="sb-argstableBlock-head"><tr><th><span>Name</span></th><th><span>Description</span></th><th><span>Default</span></th><th><span>Control</span></th></tr></thead><tbody class="sb-argstableBlock-body"><tr><td><span>propertyName</span><span title="Required">*</span></td><td><div><span>This is a short description</span></div><div class="sb-argstableBlock-summary"><div><span class="sb-argstableBlock-code">summary</span></div></div></td><td><div><span class="sb-argstableBlock-code">defaultValue</span></div></td><td><button>Set string</button></td></tr><tr><td><span>propertyName</span><span>*</span></td><td><div><span>This is a short description</span></div><div class="sb-argstableBlock-summary"><div><span class="sb-argstableBlock-code">summary</span></div></div></td><td><div><span class="sb-argstableBlock-code">defaultValue</span></div></td><td><button>Set string</button></td></tr><tr><td><span>propertyName</span><span>*</span></td><td><div><span>This is a short description</span></div><div class="sb-argstableBlock-summary"><div><span class="sb-argstableBlock-code">summary</span></div></div></td><td><div><span class="sb-argstableBlock-code">defaultValue</span></div></td><td><button>Set string</button></td></tr></tbody></table></div><div class="sb-nopreview sb-wrapper"><div class="sb-nopreview_main"><h1 class="sb-nopreview_heading sb-heading">No Preview</h1><p>Sorry, but you either have no stories or none are selected somehow.</p><ul><li>Please check the Storybook config.</li><li>Try reloading the page.</li></ul><p>If the problem persists, check the browser console, or the terminal you've run Storybook from.</p></div></div><div class="sb-errordisplay sb-wrapper"><pre id="error-message" class="sb-heading"></pre><pre class="sb-errordisplay_code"><code id="error-stack"></code></pre></div><div id="root"></div><div id="docs-root"></div><script>window['CONFIG_TYPE'] = "PRODUCTION";
+  }</style><script>if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register('/service-worker.js')
+        .then(registration => {
+          console.log('Service Worker 注册成功:', registration)
+        })
+        .catch(error => {
+          console.log('Service Worker 注册失败:', error)
+        })
+    })
+  }</script><div class="sb-preparing-story sb-wrapper"><div class="sb-loader"></div></div><div class="sb-preparing-docs sb-wrapper"><div class="sb-previewBlock"><div class="sb-previewBlock_header"><div class="sb-previewBlock_icon"></div><div class="sb-previewBlock_icon"></div><div class="sb-previewBlock_icon"></div><div class="sb-previewBlock_icon"></div></div><div class="sb-previewBlock_body"><div class="sb-loader"></div></div></div><table aria-hidden="true" class="sb-argstableBlock"><thead class="sb-argstableBlock-head"><tr><th><span>Name</span></th><th><span>Description</span></th><th><span>Default</span></th><th><span>Control</span></th></tr></thead><tbody class="sb-argstableBlock-body"><tr><td><span>propertyName</span><span title="Required">*</span></td><td><div><span>This is a short description</span></div><div class="sb-argstableBlock-summary"><div><span class="sb-argstableBlock-code">summary</span></div></div></td><td><div><span class="sb-argstableBlock-code">defaultValue</span></div></td><td><button>Set string</button></td></tr><tr><td><span>propertyName</span><span>*</span></td><td><div><span>This is a short description</span></div><div class="sb-argstableBlock-summary"><div><span class="sb-argstableBlock-code">summary</span></div></div></td><td><div><span class="sb-argstableBlock-code">defaultValue</span></div></td><td><button>Set string</button></td></tr><tr><td><span>propertyName</span><span>*</span></td><td><div><span>This is a short description</span></div><div class="sb-argstableBlock-summary"><div><span class="sb-argstableBlock-code">summary</span></div></div></td><td><div><span class="sb-argstableBlock-code">defaultValue</span></div></td><td><button>Set string</button></td></tr></tbody></table></div><div class="sb-nopreview sb-wrapper"><div class="sb-nopreview_main"><h1 class="sb-nopreview_heading sb-heading">No Preview</h1><p>Sorry, but you either have no stories or none are selected somehow.</p><ul><li>Please check the Storybook config.</li><li>Try reloading the page.</li></ul><p>If the problem persists, check the browser console, or the terminal you've run Storybook from.</p></div></div><div class="sb-errordisplay sb-wrapper"><pre id="error-message" class="sb-heading"></pre><pre class="sb-errordisplay_code"><code id="error-stack"></code></pre></div><div id="root"></div><div id="docs-root"></div><script>window['CONFIG_TYPE'] = "PRODUCTION";
           
       
           
@@ -419,4 +445,4 @@
           
       
           
-            window['STORIES'] = [{"titlePrefix":"","directory":"./src","files":"**/*.stories.@(js|jsx|ts|tsx)","importPathMatcher":"^\\.[\\\\/](?:src(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.(js|jsx|ts|tsx))$"}];</script><script src="runtime~main.f00ce860.iframe.bundle.js"></script><script src="201.53fcf663.iframe.bundle.js"></script><script src="443.c0358721.iframe.bundle.js"></script><script src="465.f7ce0e52.iframe.bundle.js"></script><script src="312.c348d3bb.iframe.bundle.js"></script><script src="376.322a60d9.iframe.bundle.js"></script><script src="864.63a233e5.iframe.bundle.js"></script><script src="722.74cb686b.iframe.bundle.js"></script><script src="358.a2719c7c.iframe.bundle.js"></script><script src="339.d804921d.iframe.bundle.js"></script><script src="967.706b5fbf.iframe.bundle.js"></script><script src="624.e2672b49.iframe.bundle.js"></script><script src="917.0d333b3a.iframe.bundle.js"></script><script src="83.d588d602.iframe.bundle.js"></script><script src="82.cd207f9f.iframe.bundle.js"></script><script src="49.ad1be953.iframe.bundle.js"></script><script src="33.3a0c3874.iframe.bundle.js"></script><script src="755.ddcc8969.iframe.bundle.js"></script><script src="24.f996d004.iframe.bundle.js"></script><script src="main-296f7ffc.94dbe72b.iframe.bundle.js"></script><script src="main-4ab8fa9a.fdf131b3.iframe.bundle.js"></script><script src="main-3cc37e69.28531b81.iframe.bundle.js"></script><script src="main-8b866349.f00ac713.iframe.bundle.js"></script><script src="main-1d479d7e.aee52317.iframe.bundle.js"></script><script src="main-6fd56578.c7d54f12.iframe.bundle.js"></script><script src="main-52f0199e.9cbf2ab5.iframe.bundle.js"></script><script src="main-6dd396c5.d15f25ef.iframe.bundle.js"></script><script src="main-42e662e4.88b9f959.iframe.bundle.js"></script><script src="main-f123080a.f83c0bd6.iframe.bundle.js"></script><script src="main-ae0da865.d28c0688.iframe.bundle.js"></script><script src="main-5a8d2ee2.0ca7dfe6.iframe.bundle.js"></script><script src="main-2894f924.9a8ffc7b.iframe.bundle.js"></script><script src="main-05ee9f99.76233aaf.iframe.bundle.js"></script><script src="main-8fc6f467.fed68299.iframe.bundle.js"></script><script src="main-5c1ca5a8.89027040.iframe.bundle.js"></script><script src="main-a1d170d4.77e5e29c.iframe.bundle.js"></script></body></html>
+            window['STORIES'] = [{"titlePrefix":"","directory":"./src","files":"**/*.stories.@(js|jsx|ts|tsx)","importPathMatcher":"^\\.[\\\\/](?:src(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.(js|jsx|ts|tsx))$"}];</script><script src="runtime~main.7582bee6.iframe.bundle.js"></script><script src="326.6db20e8f.iframe.bundle.js"></script><script src="379.15e6362e.iframe.bundle.js"></script><script src="98.f0243cda.iframe.bundle.js"></script><script src="676.e34d1e57.iframe.bundle.js"></script><script src="492.9e6f6a56.iframe.bundle.js"></script><script src="166.592e19c1.iframe.bundle.js"></script><script src="284.1680156a.iframe.bundle.js"></script><script src="915.69a0df2d.iframe.bundle.js"></script><script src="42.0908c6d3.iframe.bundle.js"></script><script src="422.052d240a.iframe.bundle.js"></script><script src="637.b591b83f.iframe.bundle.js"></script><script src="903.77e2c782.iframe.bundle.js"></script><script src="279.53214d57.iframe.bundle.js"></script><script src="82.b6c2894a.iframe.bundle.js"></script><script src="184.986c9ea9.iframe.bundle.js"></script><script src="81.bd736364.iframe.bundle.js"></script><script src="996.ad55b7ac.iframe.bundle.js"></script><script src="943.21cc43cc.iframe.bundle.js"></script><script src="786.92880a46.iframe.bundle.js"></script><script src="main-296f7ffc.7b27fd00.iframe.bundle.js"></script><script src="main-4ab8fa9a.692c13bc.iframe.bundle.js"></script><script src="main-12c8e37e.839c6611.iframe.bundle.js"></script><script src="main-7cc7466e.7bc0978e.iframe.bundle.js"></script><script src="main-6fd56578.96cdca3b.iframe.bundle.js"></script><script src="main-b2c1640e.7e75490d.iframe.bundle.js"></script><script src="main-d605314e.fd39d728.iframe.bundle.js"></script><script src="main-6dd396c5.0a3d21db.iframe.bundle.js"></script><script src="main-1f42c3dc.a0710856.iframe.bundle.js"></script><script src="main-42e662e4.45b9d1fe.iframe.bundle.js"></script><script src="main-0e1e83df.28895db2.iframe.bundle.js"></script><script src="main-05ee9f99.d0d26c29.iframe.bundle.js"></script><script src="main-700b26c8.2a72ffea.iframe.bundle.js"></script><script src="main-f57d8346.805b02ae.iframe.bundle.js"></script><script src="main-5c1ca5a8.119982b6.iframe.bundle.js"></script><script src="main-a1d170d4.6930eaa6.iframe.bundle.js"></script></body></html>

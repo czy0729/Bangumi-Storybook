@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkweb=self.webpackChunkweb||[]).push([[745],{"./node_modules/react-dom/client.js":(e,o,t)=>{t=t("./node_modules/react-dom/index.js");o.createRoot=t.createRoot,o.hydrateRoot=t.hydrateRoot}}]);
